@@ -1,0 +1,637 @@
+/* ══════════════════════════════════════════════════════════════════
+   MedTrend Analyzer — Premium Dark Theme Stylesheet
+   A modern, glassmorphic B2B SaaS dashboard aesthetic.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables (Design Tokens) ────────────────────────────────── */
+* {
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", sans-serif;
+
+    /* Core Palette */
+    -mt-bg-darkest:     #0a0e1a;
+    -mt-bg-dark:        #0f1322;
+    -mt-bg-medium:      #151a2e;
+    -mt-bg-light:       #1c2240;
+    -mt-bg-elevated:    #222845;
+
+    /* Accent Colors */
+    -mt-primary:        #6c63ff;
+    -mt-primary-glow:   #7b73ff;
+    -mt-primary-muted:  #4a43c7;
+    -mt-accent-cyan:    #00d4aa;
+    -mt-accent-pink:    #ff6b9d;
+    -mt-accent-amber:   #ffb347;
+
+    /* Semantic Colors */
+    -mt-success:        #2ecc71;
+    -mt-success-bg:     rgba(46, 204, 113, 0.12);
+    -mt-danger:         #ff4757;
+    -mt-danger-bg:      rgba(255, 71, 87, 0.12);
+    -mt-warning:        #ffa502;
+    -mt-info:           #3498db;
+
+    /* Text */
+    -mt-text-primary:   #e8eaf6;
+    -mt-text-secondary: #8a8fb5;
+    -mt-text-muted:     #555b7a;
+    -mt-text-accent:    #a5b4fc;
+
+    /* Borders */
+    -mt-border:         rgba(255, 255, 255, 0.06);
+    -mt-border-light:   rgba(255, 255, 255, 0.1);
+    -mt-border-active:  rgba(108, 99, 255, 0.4);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ROOT PANE
+   ══════════════════════════════════════════════════════════════════ */
+.root-pane {
+    -fx-background-color: -mt-bg-darkest;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════════════════════════════════════ */
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #0d1117, #0a0e1a);
+    -fx-border-color: -mt-border;
+    -fx-border-width: 0 1 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 20, 0, 4, 0);
+}
+
+.sidebar-header {
+    -fx-background-color: transparent;
+}
+
+.brand-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+    -fx-text-fill: -mt-primary;
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.5), 8, 0, 0, 0);
+}
+
+.brand-subtitle {
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -mt-accent-cyan;
+    -fx-graphic-text-gap: 0;
+    /* Letter-spacing emulated via font stretch */
+}
+
+.brand-tagline {
+    -fx-font-size: 11px;
+    -fx-text-fill: -mt-text-muted;
+    -fx-padding: 4 0 0 0;
+}
+
+.sidebar-separator .line {
+    -fx-border-color: -mt-border;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ── Navigation ───────────────────────────────────────────────────── */
+.nav-section-label {
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -mt-text-muted;
+    -fx-padding: 0 0 8 8;
+}
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -mt-text-secondary;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 12 16;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.nav-btn:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.08);
+    -fx-text-fill: -mt-text-primary;
+}
+
+.nav-btn-active {
+    -fx-background-color: rgba(108, 99, 255, 0.15);
+    -fx-text-fill: -mt-primary-glow;
+    -fx-border-color: -mt-primary;
+    -fx-border-width: 0 0 0 3;
+    -fx-border-radius: 0 10 10 0;
+    -fx-background-radius: 0 10 10 0;
+}
+
+.nav-btn-active:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.2);
+}
+
+/* ── Sidebar Footer ──────────────────────────────────────────────── */
+.sidebar-footer {
+    -fx-background-color: transparent;
+}
+
+.footer-version {
+    -fx-font-size: 10px;
+    -fx-text-fill: -mt-text-muted;
+    -fx-padding: 8 0 0 0;
+}
+
+.footer-copyright {
+    -fx-font-size: 10px;
+    -fx-text-fill: rgba(85, 91, 122, 0.6);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONTENT AREA
+   ══════════════════════════════════════════════════════════════════ */
+.content-area {
+    -fx-background-color: -mt-bg-dark;
+}
+
+.module-view {
+    -fx-background-color: transparent;
+}
+
+/* ── Module Header ────────────────────────────────────────────────── */
+.module-header {
+    -fx-background-color: linear-gradient(to right,
+        rgba(108, 99, 255, 0.06),
+        rgba(0, 212, 170, 0.03),
+        transparent);
+    -fx-border-color: -mt-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.module-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+    -fx-text-fill: -mt-text-primary;
+}
+
+.module-description {
+    -fx-font-size: 13px;
+    -fx-text-fill: -mt-text-secondary;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   INPUT CONTROLS
+   ══════════════════════════════════════════════════════════════════ */
+.input-bar {
+    -fx-background-color: rgba(21, 26, 46, 0.6);
+    -fx-border-color: -mt-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.input-label {
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -mt-text-muted;
+}
+
+.modern-input {
+    -fx-background-color: -mt-bg-medium;
+    -fx-text-fill: -mt-text-primary;
+    -fx-prompt-text-fill: -mt-text-muted;
+    -fx-border-color: -mt-border-light;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+}
+
+.modern-input:focused {
+    -fx-border-color: -mt-primary;
+    -fx-background-color: -mt-bg-light;
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.2), 8, 0, 0, 0);
+}
+
+/* ── Spinner ──────────────────────────────────────────────────────── */
+.modern-spinner {
+    -fx-background-color: transparent;
+}
+
+.modern-spinner .text-field {
+    -fx-background-color: -mt-bg-medium;
+    -fx-text-fill: -mt-text-primary;
+    -fx-border-color: -mt-border-light;
+    -fx-border-radius: 8 0 0 8;
+    -fx-background-radius: 8 0 0 8;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+}
+
+.modern-spinner .text-field:focused {
+    -fx-border-color: -mt-primary;
+    -fx-background-color: -mt-bg-light;
+}
+
+.modern-spinner .increment-arrow-button,
+.modern-spinner .decrement-arrow-button {
+    -fx-background-color: -mt-bg-light;
+    -fx-border-color: -mt-border-light;
+    -fx-cursor: hand;
+}
+
+.modern-spinner .increment-arrow-button:hover,
+.modern-spinner .decrement-arrow-button:hover {
+    -fx-background-color: -mt-bg-elevated;
+}
+
+.modern-spinner .increment-arrow-button .increment-arrow,
+.modern-spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: -mt-text-secondary;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Primary Action Button (Start Extraction, Scan) */
+.primary-btn {
+    -fx-background-color: linear-gradient(to right, #6c63ff, #5a52d5);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-padding: 10 22;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.3), 8, 0, 0, 2);
+}
+
+.primary-btn:hover {
+    -fx-background-color: linear-gradient(to right, #7b73ff, #6c63ff);
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.5), 12, 0, 0, 3);
+}
+
+.primary-btn:pressed {
+    -fx-background-color: linear-gradient(to right, #5a52d5, #4a43c7);
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.2), 4, 0, 0, 1);
+}
+
+.primary-btn:disabled {
+    -fx-background-color: -mt-bg-light;
+    -fx-text-fill: -mt-text-muted;
+    -fx-opacity: 0.7;
+    -fx-effect: none;
+}
+
+/* Outline Button (Load CSV) */
+.outline-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -mt-accent-cyan;
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-padding: 10 22;
+    -fx-border-color: -mt-accent-cyan;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.outline-btn:hover {
+    -fx-background-color: rgba(0, 212, 170, 0.1);
+    -fx-effect: dropshadow(gaussian, rgba(0, 212, 170, 0.2), 8, 0, 0, 0);
+}
+
+.outline-btn:pressed {
+    -fx-background-color: rgba(0, 212, 170, 0.15);
+}
+
+/* Success Button (Export CSV) */
+.success-btn {
+    -fx-background-color: linear-gradient(to right, #2ecc71, #27ae60);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-padding: 10 22;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(46, 204, 113, 0.3), 8, 0, 0, 2);
+}
+
+.success-btn:hover {
+    -fx-background-color: linear-gradient(to right, #3ddc84, #2ecc71);
+    -fx-effect: dropshadow(gaussian, rgba(46, 204, 113, 0.5), 12, 0, 0, 3);
+}
+
+.success-btn:pressed {
+    -fx-background-color: linear-gradient(to right, #27ae60, #219a52);
+}
+
+/* Secondary Button (Clear) */
+.secondary-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -mt-text-secondary;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+    -fx-padding: 10 22;
+    -fx-border-color: -mt-border-light;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: -mt-text-primary;
+    -fx-border-color: -mt-text-secondary;
+}
+
+/* Danger Button */
+.danger-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -mt-danger;
+    -fx-font-weight: 700;
+    -fx-font-size: 12px;
+    -fx-padding: 8 16;
+    -fx-border-color: -mt-danger;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.danger-btn:hover {
+    -fx-background-color: -mt-danger-bg;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   PROGRESS BAR AREA
+   ══════════════════════════════════════════════════════════════════ */
+.progress-bar-container {
+    -fx-background-color: rgba(108, 99, 255, 0.06);
+    -fx-border-color: -mt-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.progress-indicator .indicator {
+    -fx-progress-color: -mt-primary;
+}
+
+.progress-indicator {
+    -fx-progress-color: -mt-primary;
+}
+
+.status-label {
+    -fx-text-fill: -mt-text-secondary;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+.count-badge {
+    -fx-background-color: rgba(108, 99, 255, 0.15);
+    -fx-text-fill: -mt-primary-glow;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-border-color: -mt-border-active;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   TABLE VIEW — Premium Dark Theme
+   ══════════════════════════════════════════════════════════════════ */
+.table-container {
+    -fx-background-color: transparent;
+}
+
+.modern-table {
+    -fx-background-color: -mt-bg-medium;
+    -fx-border-color: -mt-border-light;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 0;
+}
+
+/* Table Header */
+.modern-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #1c2240, #181d35);
+    -fx-background-radius: 12 12 0 0;
+}
+
+.modern-table .column-header-background .filler {
+    -fx-background-color: linear-gradient(to bottom, #1c2240, #181d35);
+}
+
+.modern-table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -mt-border transparent;
+}
+
+.modern-table .column-header .label {
+    -fx-text-fill: -mt-text-accent;
+    -fx-font-weight: 700;
+    -fx-font-size: 11px;
+    -fx-padding: 10 12;
+}
+
+/* Table Rows */
+.modern-table .table-row-cell {
+    -fx-background-color: -mt-bg-medium;
+    -fx-border-color: transparent transparent -mt-border transparent;
+}
+
+.modern-table .table-row-cell:odd {
+    -fx-background-color: rgba(28, 34, 64, 0.5);
+}
+
+.modern-table .table-row-cell:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.08);
+}
+
+.modern-table .table-row-cell:selected {
+    -fx-background-color: rgba(108, 99, 255, 0.18);
+}
+
+.modern-table .table-row-cell:selected:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.24);
+}
+
+/* Table Cells */
+.modern-table .table-cell {
+    -fx-text-fill: -mt-text-primary;
+    -fx-font-size: 13px;
+    -fx-padding: 8 12;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Table Placeholder */
+.modern-table .placeholder .label,
+.table-placeholder {
+    -fx-text-fill: -mt-text-muted;
+    -fx-font-style: italic;
+    -fx-font-size: 13px;
+}
+
+/* ── SSL Status Cell Styles ──────────────────────────────────────── */
+.ssl-valid {
+    -fx-text-fill: -mt-success;
+    -fx-font-weight: 700;
+}
+
+.ssl-invalid {
+    -fx-text-fill: -mt-danger;
+    -fx-font-weight: 700;
+}
+
+/* ── Email Cell Style ────────────────────────────────────────────── */
+.email-found {
+    -fx-text-fill: -mt-info;
+}
+
+.email-none {
+    -fx-text-fill: -mt-text-muted;
+    -fx-font-style: italic;
+}
+
+/* ── Website Cell Style ──────────────────────────────────────────── */
+.website-link {
+    -fx-text-fill: -mt-accent-cyan;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BOTTOM ACTION BAR
+   ══════════════════════════════════════════════════════════════════ */
+.action-bar {
+    -fx-background-color: linear-gradient(to top,
+        rgba(10, 14, 26, 0.8),
+        transparent);
+    -fx-border-color: -mt-border;
+    -fx-border-width: 1 0 0 0;
+}
+
+.total-label {
+    -fx-text-fill: -mt-text-secondary;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SCROLL BARS — Minimal Dark Theme
+   ══════════════════════════════════════════════════════════════════ */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(108, 99, 255, 0.2);
+    -fx-background-radius: 10;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.4);
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: rgba(108, 99, 255, 0.5);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SEPARATOR
+   ══════════════════════════════════════════════════════════════════ */
+.separator .line {
+    -fx-border-color: -mt-border;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   TOOLTIP
+   ══════════════════════════════════════════════════════════════════ */
+.tooltip {
+    -fx-background-color: -mt-bg-elevated;
+    -fx-text-fill: -mt-text-primary;
+    -fx-border-color: -mt-border-light;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 12;
+    -fx-font-size: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 2);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ALERT DIALOGS — Dark Theme Override
+   ══════════════════════════════════════════════════════════════════ */
+.alert .dialog-pane {
+    -fx-background-color: -mt-bg-dark;
+    -fx-border-color: -mt-border-light;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.alert .dialog-pane .content {
+    -fx-text-fill: -mt-text-primary;
+}
+
+.alert .dialog-pane .header-panel {
+    -fx-background-color: -mt-bg-medium;
+}
+
+.alert .dialog-pane .header-panel .label {
+    -fx-text-fill: -mt-text-primary;
+    -fx-font-weight: 700;
+}
+
+.alert .dialog-pane .button-bar .button {
+    -fx-background-color: -mt-bg-light;
+    -fx-text-fill: -mt-text-primary;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.alert .dialog-pane .button-bar .button:hover {
+    -fx-background-color: -mt-bg-elevated;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONTEXT MENU
+   ══════════════════════════════════════════════════════════════════ */
+.context-menu {
+    -fx-background-color: -mt-bg-elevated;
+    -fx-border-color: -mt-border-light;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 4;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 4);
+}
+
+.context-menu .menu-item {
+    -fx-background-color: transparent;
+    -fx-padding: 6 16;
+}
+
+.context-menu .menu-item .label {
+    -fx-text-fill: -mt-text-primary;
+    -fx-font-size: 13px;
+}
+
+.context-menu .menu-item:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.12);
+}
+
+.context-menu .menu-item:focused {
+    -fx-background-color: rgba(108, 99, 255, 0.12);
+}

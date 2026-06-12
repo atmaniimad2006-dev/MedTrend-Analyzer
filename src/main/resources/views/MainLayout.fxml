@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.image.ImageView?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ma.ensa.medtrend.controllers.MainController"
+      stylesheets="@/css/style.css"
+      styleClass="root-pane">
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  SIDEBAR NAVIGATION                                       -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="260" spacing="0">
+
+        <!-- ── Brand Header ────────────────────────────────────── -->
+        <VBox styleClass="sidebar-header" spacing="4" alignment="CENTER_LEFT">
+            <padding><Insets top="28" right="24" bottom="20" left="24"/></padding>
+            <Label text="MedTrend" styleClass="brand-title"/>
+            <Label text="ANALYZER" styleClass="brand-subtitle"/>
+            <Label text="B2B Extraction &amp; Security Audit" styleClass="brand-tagline"/>
+        </VBox>
+
+        <Separator styleClass="sidebar-separator"/>
+
+        <!-- ── Navigation Items ────────────────────────────────── -->
+        <VBox styleClass="nav-section" spacing="4">
+            <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+            <Label text="MODULES" styleClass="nav-section-label"/>
+
+            <Button fx:id="btnLeadGenerator"
+                    text="⚡  Lead Generator"
+                    onAction="#handleShowLeadGenerator"
+                    styleClass="nav-btn, nav-btn-active"
+                    maxWidth="Infinity"
+                    alignment="CENTER_LEFT"/>
+
+            <Button fx:id="btnNetworkAuditor"
+                    text="🛡  Network Auditor"
+                    onAction="#handleShowNetworkAuditor"
+                    styleClass="nav-btn"
+                    maxWidth="Infinity"
+                    alignment="CENTER_LEFT"/>
+        </VBox>
+
+        <!-- ── Spacer ──────────────────────────────────────────── -->
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <!-- ── Footer ──────────────────────────────────────────── -->
+        <VBox styleClass="sidebar-footer" spacing="2" alignment="CENTER_LEFT">
+            <padding><Insets top="16" right="24" bottom="20" left="24"/></padding>
+            <Separator styleClass="sidebar-separator"/>
+            <Label text="v1.0 — Java 17 + Selenium" styleClass="footer-version"/>
+            <Label text="© 2026 MedTrend Team" styleClass="footer-copyright"/>
+        </VBox>
+    </VBox>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  MAIN CONTENT AREA                                        -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <StackPane fx:id="contentArea" HBox.hgrow="ALWAYS" styleClass="content-area">
+        <!-- Content views are loaded dynamically by MainController -->
+    </StackPane>
+
+</HBox>

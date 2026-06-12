@@ -3,6 +3,6 @@ package ma.ensa.medtrend.services;
 import ma.ensa.medtrend.models.Lead;
 import java.util.List;
 
-public interface ICyberAuditService {
-    List<Lead> performAudit(List<Lead> leadsToAudit);
+public interface IScraperService {
+    List<Lead> extractData(List<String> targetUrls);
 }

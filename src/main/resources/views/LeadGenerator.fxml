@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ma.ensa.medtrend.controllers.LeadGeneratorController"
+      spacing="0" styleClass="module-view">
+
+    <!-- ── Module Header ──────────────────────────────────────── -->
+    <VBox styleClass="module-header" spacing="4">
+        <padding><Insets top="28" right="32" bottom="20" left="32"/></padding>
+        <Label text="Lead Generator" styleClass="module-title"/>
+        <Label text="Extract businesses from Google Maps with valid websites only" styleClass="module-description"/>
+    </VBox>
+
+    <!-- ── Input Controls ─────────────────────────────────────── -->
+    <HBox styleClass="input-bar" spacing="12" alignment="CENTER_LEFT">
+        <padding><Insets top="16" right="32" bottom="16" left="32"/></padding>
+
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="NICHE / SECTOR" styleClass="input-label"/>
+            <TextField fx:id="nicheField"
+                       promptText="e.g., Dentist, Clinic, Pharmacy..."
+                       styleClass="modern-input"/>
+        </VBox>
+
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="LOCATION" styleClass="input-label"/>
+            <TextField fx:id="locationField"
+                       promptText="e.g., Casablanca, Rabat, Marrakech..."
+                       styleClass="modern-input"/>
+        </VBox>
+
+        <VBox spacing="4" prefWidth="120">
+            <Label text="MAX LEADS" styleClass="input-label"/>
+            <Spinner fx:id="maxLeadsSpinner"
+                     styleClass="modern-spinner"
+                     prefWidth="120"/>
+        </VBox>
+
+        <VBox spacing="4" alignment="BOTTOM_LEFT">
+            <Label text=" " styleClass="input-label"/>  <!-- spacer for alignment -->
+            <Button fx:id="btnStartScraping"
+                    text="🔍  Start Extraction"
+                    onAction="#handleStartScraping"
+                    styleClass="primary-btn"/>
+        </VBox>
+    </HBox>
+
+    <!-- ── Progress Feedback Bar ──────────────────────────────── -->
+    <HBox fx:id="progressBar" styleClass="progress-bar-container" spacing="12" alignment="CENTER_LEFT"
+          managed="false" visible="false">
+        <padding><Insets top="8" right="32" bottom="8" left="32"/></padding>
+        <ProgressIndicator fx:id="progressIndicator" prefWidth="22" prefHeight="22"/>
+        <Label fx:id="statusLabel" text="Ready" styleClass="status-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="countLabel" text="0 leads found" styleClass="count-badge"/>
+    </HBox>
+
+    <!-- ── Results Table ──────────────────────────────────────── -->
+    <VBox VBox.vgrow="ALWAYS" styleClass="table-container">
+        <padding><Insets top="0" right="32" bottom="16" left="32"/></padding>
+
+        <TableView fx:id="resultsTable" VBox.vgrow="ALWAYS" styleClass="modern-table">
+            <placeholder>
+                <Label text="No results yet. Enter a niche and location, then click Start Extraction."
+                       styleClass="table-placeholder"/>
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="colCompanyName" text="Company Name" prefWidth="350"/>
+                <TableColumn fx:id="colWebsite" text="Website" prefWidth="400"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </VBox>
+
+    <!-- ── Bottom Action Bar ──────────────────────────────────── -->
+    <HBox styleClass="action-bar" spacing="12" alignment="CENTER_RIGHT">
+        <padding><Insets top="12" right="32" bottom="20" left="32"/></padding>
+        <Label fx:id="totalLabel" text="Total: 0 leads" styleClass="total-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnClearResults"
+                text="Clear Results"
+                onAction="#handleClearResults"
+                styleClass="secondary-btn"/>
+        <Button fx:id="btnAuditLeads"
+                text="Audit Extracted Leads"
+                onAction="#handleAuditExtractedLeads"
+                styleClass="primary-btn"/>
+        <Button fx:id="btnExportCsv"
+                text="📁  Export to CSV"
+                onAction="#handleExportCsv"
+                styleClass="success-btn"/>
+    </HBox>
+
+</VBox>

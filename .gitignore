@@ -1,0 +1,19 @@
+# Fichiers compilés
+target/
+*.class
+
+# Base de données locale (chaque dev aura la sienne en local pour tester)
+*.sqlite
+*.db
+
+# Fichiers IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS générés
+.DS_Store
+Thumbs.db

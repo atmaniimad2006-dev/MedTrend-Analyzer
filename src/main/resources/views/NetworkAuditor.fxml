@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ma.ensa.medtrend.controllers.NetworkAuditorController"
+      spacing="0" styleClass="module-view">
+
+    <!-- ── Module Header ──────────────────────────────────────── -->
+    <VBox styleClass="module-header" spacing="4">
+        <padding><Insets top="28" right="32" bottom="20" left="32"/></padding>
+        <Label text="Network Auditor" styleClass="module-title"/>
+        <Label text="Scan URLs for contact emails, SSL validity, and server technology" styleClass="module-description"/>
+    </VBox>
+
+    <!-- ── Input Controls ─────────────────────────────────────── -->
+    <HBox styleClass="input-bar" spacing="12" alignment="CENTER_LEFT">
+        <padding><Insets top="16" right="32" bottom="16" left="32"/></padding>
+
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="TARGET URL" styleClass="input-label"/>
+            <TextField fx:id="urlField"
+                       promptText="e.g., https://example.com"
+                       styleClass="modern-input"/>
+        </VBox>
+
+        <VBox spacing="4" alignment="BOTTOM_LEFT">
+            <Label text=" " styleClass="input-label"/>
+            <Button fx:id="btnScanSingle"
+                    text="🔍  Scan Single URL"
+                    onAction="#handleScanSingle"
+                    styleClass="primary-btn"/>
+        </VBox>
+
+        <VBox spacing="4" alignment="BOTTOM_LEFT">
+            <Label text=" " styleClass="input-label"/>
+            <Button fx:id="btnLoadCsv"
+                    text="📂  Load CSV Batch"
+                    onAction="#handleLoadCsv"
+                    styleClass="outline-btn"/>
+        </VBox>
+    </HBox>
+
+    <!-- ── Progress Feedback Bar ──────────────────────────────── -->
+    <HBox fx:id="progressBar" styleClass="progress-bar-container" spacing="12" alignment="CENTER_LEFT"
+          managed="false" visible="false">
+        <padding><Insets top="8" right="32" bottom="8" left="32"/></padding>
+        <ProgressIndicator fx:id="progressIndicator" prefWidth="22" prefHeight="22"/>
+        <Label fx:id="statusLabel" text="Ready" styleClass="status-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="countLabel" text="0 / 0 scanned" styleClass="count-badge"/>
+    </HBox>
+
+    <!-- ── Results Table ──────────────────────────────────────── -->
+    <VBox VBox.vgrow="ALWAYS" styleClass="table-container">
+        <padding><Insets top="0" right="32" bottom="16" left="32"/></padding>
+
+        <TableView fx:id="resultsTable" VBox.vgrow="ALWAYS" styleClass="modern-table">
+            <placeholder>
+                <Label text="No audit results yet. Enter a URL or load a CSV to begin scanning."
+                       styleClass="table-placeholder"/>
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="colUrl"          text="URL"             prefWidth="220"/>
+                <TableColumn fx:id="colEmails"       text="Contact Emails"  prefWidth="200"/>
+                <TableColumn fx:id="colPhoneNumbers" text="Phone Numbers"   prefWidth="150"/>
+                <TableColumn fx:id="colSslStatus"    text="SSL Status"      prefWidth="100"/>
+                <TableColumn fx:id="colServerTech"   text="Server Tech"     prefWidth="180"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </VBox>
+
+    <!-- ── Bottom Action Bar ──────────────────────────────────── -->
+    <HBox styleClass="action-bar" spacing="12" alignment="CENTER_RIGHT">
+        <padding><Insets top="12" right="32" bottom="20" left="32"/></padding>
+        <Label fx:id="totalLabel" text="Total: 0 URLs audited" styleClass="total-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnClearResults"
+                text="Clear Results"
+                onAction="#handleClearResults"
+                styleClass="secondary-btn"/>
+        <Button fx:id="btnExportCsv"
+                text="📁  Export Report"
+                onAction="#handleExportCsv"
+                styleClass="success-btn"/>
+    </HBox>
+
+</VBox>

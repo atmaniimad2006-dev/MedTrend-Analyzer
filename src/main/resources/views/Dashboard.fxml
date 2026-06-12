@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ma.ensa.medtrend.controllers.DashboardController"
+      stylesheets="@/css/dashboard.css"
+      styleClass="root-container">
+
+    <padding>
+        <Insets top="20" right="25" bottom="20" left="25"/>
+    </padding>
+
+    <!-- ── Title Section ──────────────────────────────────── -->
+    <VBox spacing="4">
+        <Label text="MedTrend Analyzer" styleClass="title-label"/>
+        <Label text="Analyse de sites web médicaux • Scraping • Audit Cyber" styleClass="subtitle-label"/>
+    </VBox>
+
+    <Separator/>
+
+    <!-- ── Zone Supérieure : Input + Actions ───────────────── -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="urlField"
+                   promptText="Entrez une URL cible..."
+                   HBox.hgrow="ALWAYS"
+                   styleClass="url-input"/>
+        <Button fx:id="btnAuditRapide"
+                text="Audit Rapide"
+                onAction="#handleAuditRapide"
+                styleClass="action-btn"/>
+        <Button fx:id="btnChargerCsv"
+                text="Charger CSV"
+                onAction="#handleChargerCsv"
+                styleClass="csv-btn"/>
+    </HBox>
+
+    <!-- ── Zone Centrale : TableView ──────────────────────── -->
+    <TableView fx:id="leadsTable" VBox.vgrow="ALWAYS" styleClass="leads-table">
+        <placeholder>
+            <Label text="Aucun résultat. Lancez un audit ou chargez un CSV pour commencer."/>
+        </placeholder>
+        <columns>
+            <TableColumn fx:id="colUrl" text="URL" prefWidth="220"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="190"/>
+            <TableColumn fx:id="colWhatsApp" text="WhatsApp" prefWidth="95"/>
+            <TableColumn fx:id="colSslValid" text="SSL" prefWidth="85"/>
+            <TableColumn fx:id="colServerInfo" text="Serveur" prefWidth="170"/>
+            <TableColumn fx:id="colRiskScore" text="Risk Score" prefWidth="110"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <!-- ── Zone Inférieure : Compteur + Actions BDD ───────── -->
+    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="bottom-bar">
+        <Label fx:id="leadCountLabel" text="0 lead(s) en base" styleClass="count-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnExporterCsv"
+                text="Exporter CSV"
+                onAction="#handleExporterCsv"
+                styleClass="export-btn"/>
+        <Button fx:id="btnViderBdd"
+                text="Vider la BDD"
+                onAction="#handleViderBdd"
+                styleClass="danger-btn"/>
+    </HBox>
+
+</VBox>

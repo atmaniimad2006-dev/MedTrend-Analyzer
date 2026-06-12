@@ -1,0 +1,170 @@
+/* ── MedTrend Analyzer — Dashboard Stylesheet ──────────────── */
+
+.root-container {
+    -fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e);
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+.title-label {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e94560;
+    -fx-font-family: "Segoe UI";
+}
+
+.subtitle-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7a7a8e;
+    -fx-font-family: "Segoe UI";
+}
+
+/* ── Separator ─────────────────────────────────────────────── */
+.separator .line {
+    -fx-border-color: #2a2a4a;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ── URL Input ─────────────────────────────────────────────── */
+.url-input {
+    -fx-background-color: #0f3460;
+    -fx-text-fill: #eaeaea;
+    -fx-prompt-text-fill: #535370;
+    -fx-border-color: #1a1a4e;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.action-btn {
+    -fx-background-color: #e94560;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 18;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-font-family: "Segoe UI";
+}
+.action-btn:hover {
+    -fx-background-color: #c43b52;
+}
+
+.csv-btn {
+    -fx-background-color: #0f3460;
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 18;
+    -fx-border-color: #3498db;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-font-family: "Segoe UI";
+}
+.csv-btn:hover {
+    -fx-background-color: #1a4a7a;
+}
+
+.export-btn {
+    -fx-background-color: #0f3460;
+    -fx-text-fill: #2ecc71;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 6 14;
+    -fx-border-color: #2ecc71;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-font-family: "Segoe UI";
+}
+.export-btn:hover {
+    -fx-background-color: #1a4a5a;
+}
+
+.danger-btn {
+    -fx-background-color: #0f3460;
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 6 14;
+    -fx-border-color: #e74c3c;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-font-family: "Segoe UI";
+}
+.danger-btn:hover {
+    -fx-background-color: #3a1a1a;
+}
+
+/* ── TableView ─────────────────────────────────────────────── */
+.leads-table {
+    -fx-background-color: #0f3460;
+    -fx-border-color: #1a1a4e;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.leads-table .column-header-background {
+    -fx-background-color: #16213e;
+}
+
+.leads-table .column-header .label {
+    -fx-text-fill: #e94560;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI";
+}
+
+.leads-table .table-row-cell {
+    -fx-background-color: #0f3460;
+    -fx-border-color: transparent transparent #1a1a4e transparent;
+}
+
+.leads-table .table-row-cell:selected {
+    -fx-background-color: #1a4a7a;
+}
+
+.leads-table .table-cell {
+    -fx-text-fill: #c8c8e0;
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI";
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 4 8;
+}
+
+.leads-table .placeholder .label {
+    -fx-text-fill: #535370;
+    -fx-font-style: italic;
+}
+
+/* ── Bottom Bar ────────────────────────────────────────────── */
+.bottom-bar {
+    -fx-padding: 8 0 0 0;
+}
+
+.count-label {
+    -fx-text-fill: #7a7a8e;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+}
+
+/* ── Progress Indicator ────────────────────────────────────── */
+.progress-indicator .indicator {
+    -fx-progress-color: #e94560;
+}
+
+/* ── ScrollBar Styling ─────────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: #16213e;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #2a2a4a;
+    -fx-background-radius: 4;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #3a3a5a;
+}
