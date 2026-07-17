@@ -182,7 +182,9 @@ public class DashboardController {
             task.getException().printStackTrace();
         }));
 
-        new Thread(task, "MedTrend-AuditRapide-Thread").start();
+        Thread auditThread = new Thread(task, "MedTrend-AuditRapide-Thread");
+        auditThread.setDaemon(true);
+        auditThread.start();
     }
 
     // ── Handle "Charger CSV" button ───────────────────────────
