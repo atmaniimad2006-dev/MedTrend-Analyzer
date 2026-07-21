@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Selenium-Dynamic_Crawling-43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium">
   <img src="https://img.shields.io/badge/SQLite-Persistence-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
   <img src="https://img.shields.io/badge/JavaFX-UI-FF0000?style=for-the-badge&logo=java&logoColor=white" alt="JavaFX">
+  <a href="https://github.com/atmaniimad2006-dev/MedTrend-Analyzer/actions"><img src="https://img.shields.io/github/actions/workflow/status/atmaniimad2006-dev/MedTrend-Analyzer/ci.yml?branch=main&style=for-the-badge" alt="CI Status"></a>
 </p>
 
 ---
@@ -158,4 +159,4 @@ medtrend-analyzer/
 
 ## 📄 License
 
-Academic project — ENSA Khouribga.
+MIT License — see [LICENSE](LICENSE) for details.
